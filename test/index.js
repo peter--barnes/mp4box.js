@@ -582,11 +582,11 @@ function load() {
 		function (response, end, error) { 
 			var nextStart = 0;
 			if (response) {
-				progressbar.progressbar({ value: Math.ceil(100*downloader.chunkStart/downloader.totalLength) });
+				//progressbar.progressbar({ value: Math.ceil(100*downloader.chunkStart/downloader.totalLength) });
 				nextStart = mp4box.appendBuffer(response);
 			}
 			if (end) {
-				progressbar.progressbar({ value: 100 });
+				//progressbar.progressbar({ value: 100 });
 				mp4box.flush();
 			} else {
 				downloader.setChunkStart(nextStart); 			

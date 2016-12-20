@@ -165,7 +165,8 @@ MP4Box.prototype.processSamples = function() {
 		for (i = 0; i < this.fragmentedTracks.length; i++) {
 			var fragTrak = this.fragmentedTracks[i];
 			trak = fragTrak.trak;
-			while (trak.nextSample < trak.samples.length && this.sampleProcessingStarted) {				
+            Log.info("MP4Box" , "fragmentation start");
+            while (trak.nextSample < trak.samples.length && this.sampleProcessingStarted) {				
 				/* The sample information is there (either because the file is not fragmented and this is not the last sample, 
 				or because the file is fragmented and the moof for that sample has been received */
 				Log.debug("MP4Box", "Creating media fragment on track #"+fragTrak.id +" for sample "+trak.nextSample); 
